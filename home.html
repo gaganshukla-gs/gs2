@@ -1,0 +1,57 @@
+<html>
+<style>
+body,p {
+ font-family:arial;
+ font-size:16px;
+ font-weight:bolder;
+ }
+ 
+.container {
+width: 350px;
+clear: both;
+}
+.container input {
+width: 100%;
+clear: both;
+}
+</style>
+	<div class="container">
+<body>
+<h3> Simple Interest Calculator </h3>
+<br/>Principal (P): 
+<input type="text" id="principal" name="principal">
+<br>
+<br/> Rate (R):
+<input type="text" id="rate" name="rate">
+<br>
+<br/> Time (t):
+<input type="text" id="time" name="time">
+<br>
+<br>
+<button onclick="compute_interest()">Compute Interest</button>
+<br><br>
+<p id="demo"></p>
+</div>
+<script>
+function Commas(n) {
+var parts=n.toString().split(".")
+return parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",") + (parts[1] ? "." + parts[1] : "");
+}
+ function compute_interest() {
+var principal = document.getElementById("principal").value;
+	var rate = document.getElementById("rate").value;
+	var time = document.getElementById("time").value;
+	
+ rate2 = parseFloat(rate)/100;
+	
+	 amount_interest = parseFloat(principal) * (1+ (parseFloat(rate2)*time));
+ 
+	 amt =amount_interest.toFixed(2);
+	 display = Commas(amt);
+	 results ="Amount to be paid is " + display+".";
+ 	
+ document.getElementById("demo").innerHTML = results;
+ }
+</script>
+</body>
+</html>
