@@ -1,0 +1,30 @@
+<DOCTYPE. Html>
+<html>
+<head>
+<title>Calculator</title>
+<script>
+ function si()
+{
+p = document.getElementById("p").value;
+t= document.getElementById("t").value;
+ r = document.getElementById("r").value;
+iresult = document.getElementById("iresult"); iresult.innerHTML = "SIMPLE INTREST = " + (p*t*r/100);
+ }
+</script>
+ </head>
+<body>
+<center>
+<h2>calculator</h2>
+Principal:
+<input id="p"><br/>
+ Rate:
+<input id="r"><br/>
+Time in years:
+<input id="t"><br/>
+ <button onclick="si()">OK</button>
+
+ 
+<p id="iresult"></p>
+</center>
+</body>
+</html>
